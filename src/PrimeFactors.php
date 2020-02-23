@@ -15,9 +15,8 @@ class PrimeFactors
         $factors = [];
 
         for ($divisor = 2; $number > 1; $divisor++) {
-            while($number % $divisor == 0) {
+            for(;$number % $divisor == 0; $number /= $divisor) {
                 $factors[] = $divisor;
-                $number = $number / $divisor;
             }
         }
 
