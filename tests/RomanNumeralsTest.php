@@ -20,7 +20,8 @@ class RomanNumeralsTest extends TestCase
         return [
             ['I', 1],
             ['II', 2],
-
+            ['III', 3],
+            ['IV', 4],
         ];
     }
 
