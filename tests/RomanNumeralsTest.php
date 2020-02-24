@@ -5,18 +5,23 @@ use PHPUnit\Framework\TestCase;
 
 class RomanNumeralsTest extends TestCase
 {
-    /** @test */
-    function it_generates_the_roman_numeral_for_1()
+    /**
+     * @test
+     *  @dataProvider numerals
+     */
+    function it_generates_the_roman_numerals($expectedResult, $number)
     {
         $numerals = new RomanNumerals();
-        $this->assertEquals('I', $numerals->generate(1));
+        $this->assertEquals($expectedResult, $numerals->generate($number));
     }
 
-    /** @test */
-    function it_generates_the_roman_numeral_for_2()
+    function numerals()
     {
-        $numerals = new RomanNumerals();
-        $this->assertEquals('II', $numerals->generate(2));
+        return [
+            ['I', 1],
+            ['II', 2],
+
+        ];
     }
 
 }
