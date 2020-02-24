@@ -16,6 +16,10 @@ class RomanNumerals
 
     public function generate($number)
     {
+        if($number < 1) {
+            throw new \Exception();
+        }
+
         $result = '';
 
         foreach (static::NUMERALS as $arabic => $numeral) {

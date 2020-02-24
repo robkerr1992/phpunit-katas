@@ -15,6 +15,17 @@ class RomanNumeralsTest extends TestCase
         $this->assertEquals($expectedResult, $numerals->generate($number));
     }
 
+    /**
+     * @test
+     */
+    function it_cannot_generate_zero_or_negative_numbers()
+    {
+        $this->expectException(\Exception::class);
+
+        $numerals = new RomanNumerals();
+        $numerals->generate(0);
+    }
+
     function numerals()
     {
         return [
