@@ -12,4 +12,11 @@ class RomanNumeralsTest extends TestCase
         $this->assertEquals('I', $numerals->generate(1));
     }
 
+    /** @test */
+    function it_generates_the_roman_numeral_for_2()
+    {
+        $numerals = new RomanNumerals();
+        $this->assertEquals('II', $numerals->generate(2));
+    }
+
 }
