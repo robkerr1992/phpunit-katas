@@ -26,6 +26,17 @@ class RomanNumeralsTest extends TestCase
         $numerals->generate(0);
     }
 
+    /**
+     * @test
+     */
+    function it_cannot_generate_numerals_greater_than_3999()
+    {
+        $this->expectException(\Exception::class);
+
+        $numerals = new RomanNumerals();
+        $numerals->generate(4000);
+    }
+
     function numerals()
     {
         return [

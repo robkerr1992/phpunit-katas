@@ -16,7 +16,7 @@ class RomanNumerals
 
     public function generate($number)
     {
-        if($number < 1) {
+        if($number < 1 || $number > 3999) {
             throw new \Exception();
         }
 
